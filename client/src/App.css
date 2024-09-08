@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+.sidebar {
+  width: 200px;                 /* Set the width of the sidebar */
+  height: 100vh;                /* Full height of the viewport */
+  position: fixed;              /* Fix the sidebar to the left side */
+  top: 0;                       /* Stick to the top */
+  left: 0;                      /* Stick to the left */
+  background-color: #333;       /* Dark background color for sidebar */
+  padding-top: 20px;            /* Some padding at the top */
+  display: flex;                /* Make the items flexible */
+  flex-direction: column;       /* Stack items vertically */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar a {
+  padding: 10px 15px;           /* Add padding inside the links */
+  text-decoration: none;        /* Remove underline from links */
+  font-size: 18px;              /* Increase font size */
+  color: white;                 /* White text color */
+  display: block;               /* Make the links take up the full width */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar a:hover {
+  background-color: #575757;    /* Change background color on hover */
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* Stack "Home" on top */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  background-color: #333;  /* Background color for navbar */
+}
+
+.home-link {
+  font-size: 64px;         /* Make "Home" larger */
+  font-weight: bold;       /* Bold the "Home" text */
   color: white;
+  text-decoration: none;   /* Remove underline */
+  margin-bottom: 20px;     /* Add space below "Home" */
 }
 
-.App-link {
-  color: #61dafb;
+.nav-links {
+  display: flex;
+  flex-direction: row;     /* Display "Create Play" and "Saved Plays" side by side */
+  justify-content: center; /* Center them horizontally */
+  gap: 20px;               /* Add space between the links */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #ff9900;          /* Highlight color on hover */
+}
+
+.App {
+  margin-left: 200px;           /* Add left margin to the rest of the content */
+  padding: 20px;                /* Add padding to main content area */
 }

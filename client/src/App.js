@@ -9,12 +9,14 @@ import { OffensiveSchemes } from "./pages/offense-schemes";
 import { Plays } from "./pages/plays";
 import { Terminology } from "./pages/terminology";
 import { NavBar } from "./components/navbar";
+import { SideBar } from "./components/sidebar";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <NavBar />
+        <SideBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
