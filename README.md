@@ -1,1 +1,1 @@
-Basketball encyclopedia website using MERN. Largely incomplete so far. 
+Basketball encyclopedia website using MERN. Most of backend has been configured. 

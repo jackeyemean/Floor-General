@@ -2,6 +2,7 @@ import express from "express"; // framework to create our APIs
 import cors from "cors"; // sets up rules when communicating between frontend and server
 import mongoose from "mongoose"; // queries database (mongoDB)
 
+
 // Import routers
 // ------------------------------
 import { userRouter } from "./routes/users.js";
@@ -10,11 +11,14 @@ import { offenseRouter } from "./routes/offensiveschemes.js";
 import { terminologyRouter } from "./routes/terminology.js";
 import { playsRouter } from "./routes/plays.js";
 // ------------------------------
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
+const mongoUri = process.env.MONGO_URI;
 
 // Middleware setup
-// ------------------------------
+// ----------------------a--------
 app.use(express.json()); // converts data from frontend to JSON
 app.use(cors());
 // ------------------------------
@@ -30,9 +34,10 @@ app.use("/plays", playsRouter);
 
 // Database connection
 // ------------------------------
-mongoose.connect(
-  "mongodb+srv://jacky33men:lne4KJz1BuxvnzeW@floorgeneralcluster.a0cod.mongodb.net/FloorGeneralCluster?retryWrites=true&w=majority&appName=FloorGeneralCluster"
-);
+mongoose
+  .connect(mongoUri)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 // ------------------------------
 
 // Start server

@@ -69,6 +69,18 @@ export const createRouter = (Model, userField) => {
     }
   });
 
+  // TODO's: 
+
+  // Get list of all Ids for specific concept
+  router.get(`/saved${userField}/ids`, async (req, res) => {
+    try {
+      const user = await UserModel.findById(req.body.userID);
+      res.json({ [`saved${userField}`]: user[userField] });
+    } catch (err) {
+      res.json(err);
+    }
+  })
+
   /*
   // Get IDs of saved concepts by a user
   // Get saved concepts for a specific category
